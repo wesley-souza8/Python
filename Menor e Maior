@@ -1,0 +1,59 @@
+'''
+n1 = float(input("Digite um número: "))
+n2 = float(input("Digite mais um número: "))
+n3 = float(input("Digite mais um número: "))
+n4 = float(input("Digite mais um número: "))
+
+if n1>n2 and n1>n3 and n1>n4:
+    print(f"Este é o maior número {n1}")
+elif n2>n3 and n2>n4:
+    print(f"Este é o maior número {n2}")
+elif n3>n4:
+    print(f"Este é o maior número {n3}")
+else:
+    print(f"Este é o maior número {n4} ")
+
+##############################################################
+
+num1 = float(input("Digite um número: "))
+num2 = float(input("Digite mais um número: "))
+num3 = float(input("Digite mais um número: "))
+num4 = float(input("Digite mais um número: "))
+
+menor_de_todos = num1
+if num2 < menor_de_todos:
+    menor_de_todos = num2
+if num3 < menor_de_todos:
+    menor_de_todos = num3
+if num4 < menor_de_todos:
+    menor_de_todos = num4
+
+print(menor_de_todos)
+'''
+
+n1 = float(input("Digite um número: "))
+n2 = float(input("Digite mais um número: "))
+n3 = float(input("Digite mais um número: "))
+n4 = float(input("Digite mais um número: "))
+
+escolha = float(input("Deseja saber 1 - maior número ou 2 - menor número: "))
+
+if escolha == 1:
+    if n1>n2 and n1>n3 and n1>n4:
+        print(f"Este é o maior número {n1}")
+    elif n2>n3 and n2>n4:
+        print(f"Este é o maior número {n2}")
+    elif n3>n4:
+        print(f"Este é o maior número {n3}")
+    else:
+        print(f"Este é o maior número {n4} ")
+else:
+    if n1<n2 and n1<n3 and n1<n4:
+        print(f"Este é o menor número {n1}")
+    elif n2<n3 and n2<n4:
+        print(f"Este é o menor número {n2}")
+    elif n3<n4:
+        print(f"Este é o menor número {n3}")
+    else:
+        print(f"Este é o menor número {n4} ")
+
