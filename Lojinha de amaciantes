@@ -1,0 +1,19 @@
+print("############################################")
+print("## BEM VINDO(A) A LOJINHA DE AMACIANTES!! ##")
+print("############################################")
+
+quant = int(input("Qual a quantidade de amaciantes deseja comprar? "))
+cadastro = float(input("Você já possiu um cadastro? 1 - Sim ou 2 - Não "))
+
+if cadastro == 1 and quant >= 100:
+    preco = 0.3
+    total = quant * preco
+    print(f"Você está comprando {quant} por R${preco} a unidade, dando um total de R${total}")
+elif cadastro == 1 or quant >= 100:
+    preco = 0.35
+    total = quant * preco
+    print(f"Você está comprando {quant} por R${preco} a unidade, dando um total de R${total}")
+else:
+    preco = 0.5
+    total = quant * preco
+    print(f"Você está comprando {quant} por R${preco} a unidade, dando um total de R${total}")
