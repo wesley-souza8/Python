@@ -1,0 +1,15 @@
+user = "Wesley"
+senha = "123"
+login_user = input("Digite o seu usuário: ")
+login_senha = input("Digite a senha: ")
+i=1
+while i < 3 and (login_senha!= senha or login_user!= user):
+    print("Usuário e/ou senha incorreto")
+    login_user = input("Digite o seu usuário: ")
+    login_senha = input("Digite a senha: ")
+    i += 1
+
+if i< 3:
+    print("Login realizado com sucesso")
+else:
+    print("Acesso bloqueado")
