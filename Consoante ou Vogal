@@ -1,0 +1,12 @@
+var2 = float(input("Deseja saber se é uma volga ou consoante? \n1-Sim \n2-Não\n"))
+if var2 == 1:
+    var1=input("Digite uma letra ou digite sair: ")
+    while var1!="sair":
+
+        if var1 == "a" or var1 == "e" or var1 == "i" or var1 == "o" or var1 == "u":
+            print(f"A leta {var1} é uma vogal")
+        else:
+            print(f"A leta {var1} é uma consoante")
+        var1 = input("Digite uma letra ou digite sair: ")
+else:
+    print("Entendido")
