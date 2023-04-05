@@ -1,0 +1,36 @@
+resposta = input("Você quer conhecer minha calculadora? (s/n)  ")
+
+while resposta != "s" and resposta != "n":
+    resposta = input("Mano é para falar (s/n) !!!  ")
+
+if resposta == "s":
+    num1 = input("Digite o primeiro número: ")
+    num2 = input("Digite o segundo número: ")
+
+    while num1.isnumeric() != True or num2.isnumeric() != True:
+        print("Um dos valores não é um numero: ")
+        num1 = input("Digite o primeiro número: ")
+        num2 = input("Digite o segundo número: ")
+    num1 = int(num1)
+    num2 = int(num2)
+
+    operacao = input("Você deseja realizar soma, subtração, divisão, multiplicação ou sair? ")
+    while operacao != "soma" and operacao != "subtração" and operacao != "divisão" and operacao != "multiplicação" and operacao != "sair":
+        print("opção inválida")
+        operacao = input("Você deseja realizar soma, subtração, divisão, multiplicação ou sair? ")
+    if  operacao == "soma":
+        total = num1 + num2
+        print(f"A {operacao} dos número é de {total}")
+    elif operacao == "subtração":
+        total = num1 - num2
+        print(f"A {operacao} dos número é de {total}")
+    elif operacao == "divisão":
+        total = num1 / num2
+        print(f"A {operacao} dos número é de {total}")
+    elif operacao == "multiplicação":
+        total = num1 * num2
+        print(f"A {operacao} dos número é de {total}")
+    else:
+        print("Você saiu")
+else:
+    print("A merda então")
