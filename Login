@@ -1,0 +1,18 @@
+nome = input("Fale seu nome: ")
+senha = "Danilo123"
+tentativas = 3
+senha_log = input("Digite a senha: ")
+if senha == senha_log:
+    print("login realizado com sucesso")
+else:
+    tentativas -= 1
+    for i in range(2):
+        print(f"senha errada, você tem mais {tentativas} tentativas")
+        senha_log = input("Digite a senha: ")
+        if senha == senha_log:
+            print("login realizado com sucesso")
+            break
+        else:
+            tentativas -= 1
+            if tentativas == 0 and senha != senha_log:
+                print("login bloqueado")
