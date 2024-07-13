@@ -1,36 +1,53 @@
-resposta = input("Você quer conhecer minha calculadora? (s/n)  ")
+################# CALCULADORA #################
 
-while resposta != "s" and resposta != "n":
-    resposta = input("Mano é para falar (s/n) !!!  ")
+print(f'{"-"*10} CALCULADORA {"-"*10}')
 
-if resposta == "s":
-    num1 = input("Digite o primeiro número: ")
-    num2 = input("Digite o segundo número: ")
+while True:
+    numero1 = input('Digite um número: ')
+    numero2 = input('Digite outro número: ')
+    operador = input('Digite o operador (+-/*): ')
 
-    while num1.isnumeric() != True or num2.isnumeric() != True:
-        print("Um dos valores não é um numero: ")
-        num1 = input("Digite o primeiro número: ")
-        num2 = input("Digite o segundo número: ")
-    num1 = int(num1)
-    num2 = int(num2)
+    numeros_valaridos = None
+    numero_1_float = 0
+    numero_2_float = 0
+    resultado = 0
+    
+    try:
+        numero_1_float = float(numero1)
+        numero_2_float = float(numero2)
+        numeros_valaridos = True
+    except Exception as error:
+        numeros_valaridos = None
 
-    operacao = input("Você deseja realizar soma, subtração, divisão, multiplicação ou sair? ")
-    while operacao != "soma" and operacao != "subtração" and operacao != "divisão" and operacao != "multiplicação" and operacao != "sair":
-        print("opção inválida")
-        operacao = input("Você deseja realizar soma, subtração, divisão, multiplicação ou sair? ")
-    if  operacao == "soma":
-        total = num1 + num2
-        print(f"A {operacao} dos número é de {total}")
-    elif operacao == "subtração":
-        total = num1 - num2
-        print(f"A {operacao} dos número é de {total}")
-    elif operacao == "divisão":
-        total = num1 / num2
-        print(f"A {operacao} dos número é de {total}")
-    elif operacao == "multiplicação":
-        total = num1 * num2
-        print(f"A {operacao} dos número é de {total}")
+    if numeros_valaridos == None:
+        print('Um ou ambos os números são inválidos.')
+        continue
+
+    operadores_permitidos = '+-/*'
+
+    if operador not in operadores_permitidos:
+        print('Operador inválido.')
+        continue
+        
+    if len(operador) > 1:
+        print('Digite apenas um operador')
+        continue
+
+    if operador == '+':
+        resultado = numero_1_float + numero_2_float
+    elif operador == '-':
+        resultado = numero_1_float - numero_2_float
+    elif operador == '*':
+        resultado = numero_1_float * numero_2_float
+    elif operador == '/':
+        resultado = numero_1_float / numero_2_float
     else:
-        print("Você saiu")
-else:
-    print("A merda então")
+        print(f'Algo deu errado')
+
+    print(f'{numero1} {operador} {numero2} = {resultado}')
+
+
+    sair = input('Quer sair? [s]ir: ').lower().startswith('s')
+
+    if sair is True:
+        break
